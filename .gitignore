@@ -1,0 +1,32 @@
+# Environment dan rahasia
+.env
+.env.*
+!.env.example
+
+# Dependencies
+/node_modules/
+/vendor/
+
+# Build output
+/dist/
+/build/
+
+# Log dan cache
+*.log
+.phpunit.result.cache
+/storage/*.key
+
+# IDE dan sistem operasi
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Dependencies seluruh subfolder
+**/node_modules/
+**/vendor/
+
+# File environment seluruh subfolder
+**/.env
+**/.env.*
+!**/.env.example

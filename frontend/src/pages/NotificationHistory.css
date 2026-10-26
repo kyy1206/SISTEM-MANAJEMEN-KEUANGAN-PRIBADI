@@ -1,0 +1,230 @@
+.notification-page {
+  display: grid;
+  gap: 14px;
+  padding-bottom: 25px;
+}
+
+.notification-summary,
+.notification-list-panel {
+  border: 1px solid #edf0f5;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(2, 6, 23, .025);
+}
+
+.notification-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 15px 18px;
+}
+
+.notification-summary > div {
+  display: grid;
+  gap: 4px;
+}
+
+.notification-summary strong {
+  color: #172033;
+  font-size: 23px;
+}
+
+.notification-summary small {
+  color: #718096;
+  font-size: 10px;
+}
+
+.notification-mark-all,
+.notification-read-button,
+.notification-pagination button,
+.dashboard-message button {
+  min-height: 34px;
+  padding: 0 11px;
+  border: 1px solid #e0e7ff;
+  border-radius: 7px;
+  background: #f5f4ff;
+  color: #5146c5;
+  font: inherit;
+  font-size: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.notification-mark-all:disabled,
+.notification-read-button:disabled,
+.notification-pagination button:disabled {
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+.notification-list-panel {
+  min-width: 0;
+  padding: 16px;
+}
+
+.notification-list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-bottom: 13px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.notification-list-heading h2 {
+  margin: 4px 0 0;
+  color: #172033;
+  font-size: 14px;
+}
+
+.notification-list-heading > span {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.notification-list {
+  display: grid;
+}
+
+.notification-item {
+  display: grid;
+  grid-template-columns: 36px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 2px;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+.notification-item:last-child {
+  border-bottom: 0;
+}
+
+.notification-item.unread {
+  background: linear-gradient(90deg, #f8f7ff, transparent);
+}
+
+.notification-icon {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #5146e5;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.notification-icon.budget_critical,
+.notification-icon.budget_overbudget {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.notification-icon.budget_warning {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.notification-icon.subscription_due {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.notification-content {
+  min-width: 0;
+}
+
+.notification-item-title {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.notification-item-title strong {
+  color: #334155;
+  font-size: 11px;
+}
+
+.notification-item-title > span {
+  padding: 2px 6px;
+  border-radius: 99px;
+  background: #eef2ff;
+  color: #5146c5;
+  font-size: 8px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.notification-content p {
+  margin: 4px 0;
+  color: #475569;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.notification-content time {
+  color: #94a3b8;
+  font-size: 9px;
+}
+
+.notification-empty {
+  display: grid;
+  min-height: 150px;
+  align-content: center;
+  justify-items: center;
+  gap: 6px;
+  margin: 0;
+  color: #94a3b8;
+  font-size: 11px;
+  text-align: center;
+}
+
+.notification-empty > span {
+  color: #a5b4fc;
+  font-size: 24px;
+}
+
+.notification-empty strong {
+  color: #334155;
+}
+
+.notification-empty p {
+  margin: 0;
+}
+
+.notification-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 12px;
+  border-top: 1px solid #edf0f5;
+  color: #718096;
+  font-size: 10px;
+}
+
+.notification-pagination > div {
+  display: flex;
+  gap: 6px;
+}
+
+@media (max-width: 650px) {
+  .notification-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .notification-mark-all {
+    grid-column: 1 / -1;
+  }
+
+  .notification-item {
+    grid-template-columns: 34px minmax(0, 1fr);
+  }
+
+  .notification-read-button {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
